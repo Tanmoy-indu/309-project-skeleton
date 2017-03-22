@@ -40,7 +40,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-default" id="submit">Submit</button>
     </div>
   </div>
 </div>
@@ -55,23 +55,23 @@
     price:null,
     quantity:null
   };
-  $('#name').change(function()){
+  $('#name').change(function(){
     product.name=$('#name').val();
   });
-   $('#description').change(function()){
+   $('#description').change(function(){
     product.description=$('#description').val();
   });
   
-   $('#price').change(function()){
+   $('#price').change(function(){
     product.price=$('#price').val();
   });
-   $('#quantity').change(function()){
+   $('#quantity').change(function(){
     product.quantity=$('#quantity').val();
   });
   
   $('#submit').click(function(){
     $.ajax({
-      method:"POST"
+      method:"POST",
       url:'/api/products',
       data:product
     }).done(function(response){
