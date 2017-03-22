@@ -48,40 +48,5 @@
   <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/ejs_production.js"></script>
   <script>
-  
-  var product={
-    name:"",
-    description:"",
-    price:null,
-    quantity:null
-  };
-  $('#name').change(function()){
-    product.name=$('#name').val();
-  });
-   $('#description').change(function()){
-    product.description=$('#description').val();
-  });
-  
-   $('#price').change(function()){
-    product.price=$('#price').val();
-  });
-   $('#quantity').change(function()){
-    product.quantity=$('#quantity').val();
-  });
-  
-  $('#submit').click(function(){
-    $.ajax({
-      method:"POST"
-      url:'/api/products',
-      data:product
-    }).done(function(response){
-      console.log(response);
-      
-    }).fail(function(response){
-      console.log(response);
-    });
-  });
-  
-  
   </script>
 </html>
